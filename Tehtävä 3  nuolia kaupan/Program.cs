@@ -18,9 +18,31 @@
 
         class Nuoli
         {
-            public Kärki NuolenKärki { get; set; }
-            public Perä NuolenPerä { get; set; }
-            public int VarrenPituus { get; set; }
+            private Kärki NuolenKärki;
+            private Perä NuolenPerä;
+            private double VarrenPituus;
+
+            public Nuoli(Kärki nuolenKärki, Perä nuolenPerä, double varrenPituus)
+            {
+                NuolenKärki = nuolenKärki;
+                NuolenPerä = nuolenPerä;
+                VarrenPituus = varrenPituus;
+            }
+
+            public Kärki GetNuolenKärki()
+            {
+                return NuolenKärki;
+            }
+
+            public Perä GetNuolenPerä()
+            {
+                return NuolenPerä;
+            }
+
+            public double GetVarrenPituus()
+            {
+                return VarrenPituus;
+            }
 
             public double PalautaHinta()
             {
@@ -62,14 +84,11 @@
 
 
 
-            Nuoli nuoli = new Nuoli
-            {
-                NuolenKärki = kärki,
-                NuolenPerä = perä,
-                VarrenPituus = pituus
-            };
+            Nuoli nuoli = new Nuoli(kärki, perä, pituus);
+
 
             Console.WriteLine($"Tämä nuolen hinta on {nuoli.PalautaHinta()} kultaa.");
+
         }
 
         static Kärki ValitseKärki()
