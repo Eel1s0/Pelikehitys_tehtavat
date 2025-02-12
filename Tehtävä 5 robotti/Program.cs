@@ -90,7 +90,14 @@
         {
             Robotti robotti = new Robotti();
 
-            Console.WriteLine("Mitä komentoja syötetään robotille? Vaihtoehdot: Käynnistä, Sammuta, Ylös, Alas, Oikea, Vasen.");
+            Console.WriteLine("Mitä komentoja syötetään robotille?");
+            Console.WriteLine("Vaihtoehdot:");
+            Console.WriteLine("1: Käynnistä");
+            Console.WriteLine("2: Sammuta");
+            Console.WriteLine("3: Ylös");
+            Console.WriteLine("4: Alas");
+            Console.WriteLine("5: Oikea");
+            Console.WriteLine("6: Vasen");
 
             for (int i = 0; i < 3; i++)
             {
@@ -99,12 +106,12 @@
 
                 robotti.Käskyt[i] = syote switch
                 {
-                    "Käynnistä" => new Käynnistä(),
-                    "Sammuta" => new Sammuta(),
-                    "Ylös" => new YlösKäsky(),
-                    "Alas" => new AlasKäsky(),
-                    "Oikea" => new OikeaKäsky(),
-                    "Vasen" => new VasenKäsky(),
+                    "1" => new Käynnistä(),
+                    "2" => new Sammuta(),
+                    "3" => new YlösKäsky(),
+                    "4" => new AlasKäsky(),
+                    "5" => new OikeaKäsky(),
+                    "6" => new VasenKäsky(),
                     _ => null
                 };
 
